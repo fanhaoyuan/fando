@@ -1,10 +1,5 @@
 {
-    "extends": [
-        "@fansy/eslint-config",
-        "plugin:react/recommended",
-        "eslint-config-prettier",
-        "plugin:tailwindcss/recommended"
-    ],
+    "extends": ["@fansy/eslint-config", "plugin:react/recommended", "eslint-config-prettier"],
     "parserOptions": {
         "sourceType": "module"
     },
@@ -21,7 +16,6 @@
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "react/prop-types": [2, { "ignore": ["children"] }],
-        "tailwindcss/no-custom-classname": "off",
         "react/react-in-jsx-scope": "off"
     }
 }
