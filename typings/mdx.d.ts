@@ -1,7 +1,5 @@
-declare module "*.mdx" {
-  const component: (
-    props: React.PropsWithChildren<Record<string, any>>
-  ) => JSX.Element;
+declare module '*.mdx' {
+    const component: (props: React.PropsWithChildren<Record<string, any>>) => JSX.Element;
 
-  export default component;
+    export default component;
 }

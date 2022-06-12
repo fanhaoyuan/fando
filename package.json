@@ -1,29 +1,31 @@
 {
-  "name": "fando",
-  "version": "0.1.0",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "keywords": [
-    "docs"
-  ],
-  "author": "fansy <418536538@qq.com>",
-  "license": "MIT",
-  "dependencies": {
-    "@mdx-js/mdx": "^2.1.1",
-    "@mdx-js/react": "^2.1.1",
-    "@mdx-js/rollup": "^2.1.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "vite": "^2.9.9"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "@vitejs/plugin-react": "^1.3.0",
-    "typescript": "^4.6.3"
-  }
+    "name": "fando",
+    "version": "0.1.0",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    },
+    "keywords": [
+        "docs"
+    ],
+    "author": "fansy <418536538@qq.com>",
+    "license": "MIT",
+    "dependencies": {
+        "@mdx-js/mdx": "^2.1.1",
+        "@mdx-js/react": "^2.1.1",
+        "@mdx-js/rollup": "^2.1.1",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "vite": "^2.9.9"
+    },
+    "devDependencies": {
+        "@fansy/eslint-config": "^1.0.0",
+        "@fansy/prettier-config": "^1.0.0",
+        "@types/react": "^18.0.0",
+        "@types/react-dom": "^18.0.0",
+        "@vitejs/plugin-react": "^1.3.0",
+        "typescript": "^4.6.3"
+    }
 }
