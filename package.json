@@ -13,6 +13,9 @@
   "author": "fansy <418536538@qq.com>",
   "license": "MIT",
   "dependencies": {
+    "@mdx-js/mdx": "^2.1.1",
+    "@mdx-js/react": "^2.1.1",
+    "@mdx-js/rollup": "^2.1.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "vite": "^2.9.9"
