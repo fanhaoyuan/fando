@@ -29,3 +29,8 @@ body {
         font-size: 18px;
     }
 }
+
+p,
+li {
+    line-height: 1.6;
+}
