@@ -34,3 +34,12 @@ p,
 li {
     line-height: 1.6;
 }
+
+a:hover {
+    text-decoration: underline;
+}
+
+a {
+    color: rgb(124, 187, 255);
+    text-decoration: none;
+}
