@@ -9,6 +9,9 @@ export default async () => {
 
     return defineConfig({
         plugins: [react(), mdx()],
+        define: {
+            'process.env.__APP_CONTEXT__': JSON.stringify('{}'),
+        },
         resolve: {
             alias: {
                 '@': path.resolve(__dirname, 'src'),

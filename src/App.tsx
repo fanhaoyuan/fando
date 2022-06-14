@@ -1,5 +1,9 @@
 import './App.css';
+import { AppContextProvider } from './app.context';
 
 export default function App() {
-    return <div className='App'></div>;
+        <AppContextProvider>
+            <div className='App'>
+            </div>
+        </AppContextProvider>
 }
