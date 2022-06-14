@@ -14,6 +14,9 @@ export function Footer(props: FooterProps) {
     return (
         <footer className={classnames(styles.footer, className)}>
             <p>&copy; {year} — MIT License</p>
+            <p>
+                Documentation built by <a href='https://github.com/fanhaoyuan/fando'>fando</a>
+            </p>
         </footer>
     );
 }
