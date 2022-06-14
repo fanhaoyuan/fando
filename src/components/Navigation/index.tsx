@@ -9,15 +9,16 @@ export interface NavigationItem {
 
 export interface NavigationProps {
     routes?: NavigationItem[];
+    className?: string;
 }
 
 export function Navigation(props: NavigationProps) {
-    const { routes = [] } = props;
+    const { routes = [], className } = props;
 
     const { pathname } = useLocation();
 
     return (
-        <nav className={styles.navigation}>
+        <nav className={classnames(styles.navigation, className)}>
             <ul className={styles.navigationMenu}>
                 {routes.map(router => {
                     const { title, path } = router;
