@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import * as path from 'path';
 
 const scopedNameMap = new Map();
 
@@ -8,6 +9,11 @@ export default async () => {
 
     return defineConfig({
         plugins: [react(), mdx()],
+        resolve: {
+            alias: {
+                '@': path.resolve(__dirname, 'src'),
+            },
+        },
         css: {
             modules: {
                 localsConvention: 'camelCaseOnly',
