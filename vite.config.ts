@@ -6,15 +6,20 @@ const scopedNameMap = new Map();
 
 export default async () => {
     const mdx = (await import('@mdx-js/rollup')).default;
+    const frontmatter = (await import('remark-frontmatter')).default;
+    const mdxFrontmatter = (await import('remark-mdx-frontmatter')).remarkMdxFrontmatter;
 
     return defineConfig({
-        plugins: [react(), mdx()],
-        define: {
-            'process.env.__APP_CONTEXT__': JSON.stringify('{}'),
-        },
+        plugins: [
+            react(),
+            mdx({
+                providerImportSource: '@mdx-js/react',
+                remarkPlugins: [frontmatter, mdxFrontmatter],
+            }),
+        ],
         resolve: {
             alias: {
-                '@': path.resolve(__dirname, 'src'),
+                '@FANDO_APP_SOURCE': path.resolve(__dirname, 'src'),
             },
         },
         css: {
@@ -25,7 +30,7 @@ export default async () => {
                         scopedNameMap.set(fileName, Math.random().toString(36).slice(-6));
                     }
 
-                    if (/^r-ant.*/.test(name)) {
+                    if (/^prismjs.*/.test(name)) {
                         return name;
                     }
 

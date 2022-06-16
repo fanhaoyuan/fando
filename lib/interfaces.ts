@@ -1,7 +1,7 @@
 export interface Config {
     /**
      * Configure the name of the document on the header
-     * 
+     *
      * @default `require('package.json').name`
      */
     title?: string;
@@ -10,7 +10,7 @@ export interface Config {
      * To set the LOGO of the document.
      */
     logo?: string;
-    
+
     /**
      * The path for mdx files to search
      *
@@ -19,4 +19,8 @@ export interface Config {
      * @default 'docs/src'
      */
     docsPath?: string;
+}
+
+export interface ServerOptions {
+    type: 'dev' | 'build';
 }
