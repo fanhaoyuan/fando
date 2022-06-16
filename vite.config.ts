@@ -33,5 +33,8 @@ export default async () => {
                 },
             },
         },
+        optimizeDeps: {
+            include: ['react/jsx-runtime'],
+        },
     });
 };
