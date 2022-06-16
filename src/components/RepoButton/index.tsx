@@ -1,4 +1,4 @@
-import { useAppContext } from '@/app.context';
+import { useAppContext } from '@FANDO_APP_SOURCE/app.context';
 import { useMemo } from 'react';
 import styles from './index.module.css';
 import { GithubOutlined, ShareAltOutlined } from '@ant-design/icons';

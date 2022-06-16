@@ -16,9 +16,9 @@
         "jsx": "react-jsx",
         "baseUrl": ".",
         "paths": {
-            "@/*": ["src/*"]
+            "@FANDO_APP_SOURCE/*": ["src/*"]
         },
-        "types": ["vite/client"]
+        "types": ["vite/client", "node"]
     },
     "include": ["src"]
 }
