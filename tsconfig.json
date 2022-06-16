@@ -8,7 +8,7 @@
         "allowSyntheticDefaultImports": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
-        "module": "ESNext",
+        "module": "esnext",
         "moduleResolution": "Node",
         "resolveJsonModule": true,
         "isolatedModules": true,
@@ -17,7 +17,8 @@
         "baseUrl": ".",
         "paths": {
             "@/*": ["src/*"]
-        }
+        },
+        "types": ["vite/client"]
     },
-    "include": ["src", "typings"]
+    "include": ["src"]
 }

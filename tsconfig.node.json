@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "Node"
+    },
+    "include": ["bin", "lib"],
+    "exclude": ["node_modules"]
+}
