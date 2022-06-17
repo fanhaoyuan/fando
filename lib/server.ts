@@ -7,7 +7,7 @@ import * as fs from 'fs-extra';
 export async function server(options: ServerOptions) {
     const { type } = options;
 
-    const { docsPath = 'docs/src', title, logo } = await getCustomConfig();
+    const { docsPath = 'docs/src', title, logo, base } = await getCustomConfig();
 
     const cwd = process.cwd();
 
@@ -22,6 +22,7 @@ export async function server(options: ServerOptions) {
 
     const config: InlineConfig = {
         root: path.resolve(__dirname, '..'),
+        base,
         define: {
             __FANDO_APP_CONTEXT__: JSON.stringify(appContext),
             __FANDO_APP_DOCS_PATH__: JSON.stringify(docsPath),

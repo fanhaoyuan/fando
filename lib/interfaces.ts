@@ -1,4 +1,6 @@
-export interface Config {
+import { UserConfig } from 'vite';
+
+export interface Config extends Pick<UserConfig, 'base'> {
     /**
      * Configure the name of the document on the header
      *
