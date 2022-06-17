@@ -34,7 +34,7 @@ Object.keys(modules).forEach(path => {
     const _path = new URL(path, import.meta.url).pathname
         .replace(new RegExp(__FANDO_APP_DOCS_PATH__), '/')
         .replace(/\.md(x)?/, '')
-        .replace(/\/index$/, '/')
+        .replace(/\/index$/, '')
         .replace(/\/\/(\/)?/g, '/');
 
     asyncRoutes[0].children?.push({
