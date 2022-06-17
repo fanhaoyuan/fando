@@ -8,6 +8,7 @@
     "keywords": [
         "docs"
     ],
+    "main": "lib/index.js",
     "author": "fansy <418536538@qq.com>",
     "license": "MIT",
     "repository": {
@@ -15,13 +16,14 @@
         "url": "git+https://github.com/fanhaoyuan/fando.git"
     },
     "bin": {
-        "fando": "node dist/bin/fando.js"
+        "fando": "./bin/fando.js"
     },
     "dependencies": {
         "@ant-design/icons": "^4.7.0",
         "@mdx-js/mdx": "^2.1.1",
         "@mdx-js/react": "^2.1.1",
         "@mdx-js/rollup": "^2.1.1",
+        "@vitejs/plugin-react": "^1.3.2",
         "classnames": "^2.3.1",
         "commander": "^9.3.0",
         "config": "^3.3.7",
@@ -47,7 +49,6 @@
         "@types/react": "^18.0.0",
         "@types/react-dom": "^18.0.0",
         "@types/react-syntax-highlighter": "^15.5.2",
-        "@vitejs/plugin-react": "^1.3.0",
         "eslint-plugin-react": "^7.30.0",
         "eslint-plugin-react-hooks": "^4.5.0",
         "ts-node": "^10.8.1",
