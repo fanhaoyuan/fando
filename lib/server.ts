@@ -39,5 +39,9 @@ export async function server(options: ServerOptions) {
         return;
     }
 
-    (await createServer(config)).listen();
+    const devServer = await (await createServer(config)).listen();
+
+    console.log();
+    console.log(`Dev server running at http://localhost:${devServer.config.server.port}`);
+    console.log();
 }
