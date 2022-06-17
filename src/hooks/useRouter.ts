@@ -9,13 +9,17 @@ export function useRouter() {
 
     const [router, setRouter] = useState<RouteRecord>();
 
-    useEffect(() => {
-        const collection = asyncRoutes.find(item => item.path === '/')?.children ?? [];
+    const [collection, setCollection] = useState<RouteRecord[]>([]);
 
-        for (let i = 0; i < collection.length; i++) {
-            if (pathname === collection[i].path) {
+    useEffect(() => {
+        const routes = asyncRoutes.find(item => item.path === '/')?.children ?? [];
+
+        setCollection(() => routes);
+
+        for (let i = 0; i < routes.length; i++) {
+            if (pathname === routes[i].path) {
                 setOrder(() => i);
-                setRouter(collection[i]);
+                setRouter(() => routes[i]);
             }
         }
     }, [pathname]);
@@ -23,5 +27,6 @@ export function useRouter() {
     return {
         router,
         order,
+        collection,
     };
 }

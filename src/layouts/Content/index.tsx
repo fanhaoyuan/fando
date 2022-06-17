@@ -4,6 +4,8 @@ import styles from './index.module.css';
 import classnames from 'classnames';
 import { NavigationLink, Heading, Blockquote, Link, Code, Pre } from '@FANDO_APP_SOURCE/components';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import { useRouter } from '@FANDO_APP_SOURCE/hooks';
+import { useMemo } from 'react';
 
 export interface ContentProps {
     className?: string;
@@ -11,6 +13,23 @@ export interface ContentProps {
 
 export function Content(props: ContentProps) {
     const { className } = props;
+
+    const { order, collection } = useRouter();
+
+    const showPrevLink = order > 0;
+    const showNextLink = order < collection.length - 1;
+
+    const prevRouter = useMemo(() => {
+        if (showPrevLink) {
+            return collection[order - 1];
+        }
+    }, [showPrevLink, collection, order]);
+
+    const nextRouter = useMemo(() => {
+        if (showNextLink) {
+            return collection[order + 1];
+        }
+    }, [showNextLink, collection, order]);
 
     return (
         <section className={classnames(styles.content, className)}>
@@ -32,14 +51,25 @@ export function Content(props: ContentProps) {
             </MDXProvider>
 
             <div className={styles.navigationLinkGroup}>
-                <NavigationLink className={classnames(styles.navigationLink, styles.prevLink)} to='#'>
-                    <ArrowLeftOutlined className={styles.navigationLinkIcon} />
-                    Prev
-                </NavigationLink>
-                <NavigationLink className={classnames(styles.navigationLink, styles.nextLink)} to='#'>
-                    Next
-                    <ArrowRightOutlined className={styles.navigationLinkIcon} />
-                </NavigationLink>
+                {showPrevLink && (
+                    <NavigationLink
+                        className={classnames(styles.navigationLink, styles.prevLink)}
+                        to={prevRouter?.path}
+                    >
+                        <ArrowLeftOutlined className={styles.navigationLinkIcon} />
+                        {prevRouter?.meta?.title}
+                    </NavigationLink>
+                )}
+
+                {showNextLink && (
+                    <NavigationLink
+                        className={classnames(styles.navigationLink, styles.nextLink)}
+                        to={nextRouter?.path}
+                    >
+                        {nextRouter?.meta?.title}
+                        <ArrowRightOutlined className={styles.navigationLinkIcon} />
+                    </NavigationLink>
+                )}
             </div>
         </section>
     );

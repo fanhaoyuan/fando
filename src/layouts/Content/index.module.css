@@ -15,10 +15,11 @@
 }
 
 .navigationLink {
-    flex: 1 1 auto;
+    /* flex: 1 1 auto; */
     font-size: 22px !important;
     display: inline-flex !important;
     align-items: center;
+    width: 50%;
 }
 
 .prevLink {
@@ -34,6 +35,7 @@
 }
 
 .nextLink {
+    margin-left: auto;
     justify-content: end;
 }
 
