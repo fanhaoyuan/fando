@@ -21,6 +21,13 @@ export interface Config extends Pick<UserConfig, 'base'> {
      * @default 'docs/src'
      */
     docsPath?: string;
+
+    /**
+     * Relative to `process.cwd()`
+     * 
+     * @default 'docs-dist'
+     */
+    outDir?: string;
 }
 
 export interface ServerOptions {
