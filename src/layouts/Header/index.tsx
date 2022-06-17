@@ -1,6 +1,6 @@
 import styles from './index.module.css';
 import classnames from 'classnames';
-import { RepoButton } from '../RepoButton';
+import { RepoButton } from '@FANDO_APP_SOURCE/components';
 import { useAppContext } from '@FANDO_APP_SOURCE/app.context';
 
 export interface HeaderProps {

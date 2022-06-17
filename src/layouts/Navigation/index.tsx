@@ -1,6 +1,7 @@
 import styles from './index.module.css';
 import { Link, useLocation } from 'react-router-dom';
 import classnames from 'classnames';
+import { useAppContext } from '@FANDO_APP_SOURCE/app.context';
 
 export interface NavigationItem {
     title: string;
@@ -13,15 +14,17 @@ export interface NavigationProps {
 }
 
 export function Navigation(props: NavigationProps) {
-    const { routes = [], className } = props;
+    const { className } = props;
 
     const { pathname } = useLocation();
+
+    const { routes } = useAppContext();
 
     return (
         <nav className={classnames(styles.navigation, className)}>
             <ul className={styles.navigationMenu}>
-                {routes.map(router => {
-                    const { title, path } = router;
+                {routes?.map(router => {
+                    const { meta = {}, path } = router;
 
                     return (
                         <li
@@ -30,7 +33,7 @@ export function Navigation(props: NavigationProps) {
                                 [styles.active]: path === pathname,
                             })}
                         >
-                            <Link to={path}>{title}</Link>
+                            <Link to={path}>{meta.title}</Link>
                         </li>
                     );
                 })}
